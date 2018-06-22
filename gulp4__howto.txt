@@ -1,0 +1,74 @@
+Выполните следующее, чтобы проверить версию gulp cli, установленную на вашем компьютере.
+
+gulp -v
+Если вы не используете версию 4, выполните следующие действия для установки gulp на глобальном уровне на вашем компьютере.
+
+npm uninstall -g gulp
+npm install -g "gulpjs/gulp#4.0"
+Теперь установите gulp 4 локально
+
+npm uninstall gulp --save-dev
+npm install "gulpjs/gulp#4.0" --save-dev
+
+# Uninstall previous Gulp installation and related packages, if any
+$ npm rm gulp -g
+$ npm rm gulp-cli -g
+$ cd [your-project-dir/]
+$ npm rm gulp --save-dev
+$ npm rm gulp --save
+$ npm rm gulp --save-optional
+$ npm cache clean
+
+# Install the latest Gulp CLI tools globally
+$ npm install gulpjs/gulp-cli -g
+
+# Install Gulp 4 into your project from 4.0 GitHub branch as dev dependency
+$ npm install gulpjs/gulp#4.0 --save-dev
+
+# Check the versions installed. Make sure your versions are not lower than shown.
+$ gulp -v
+---
+[10:48:35] CLI version 1.2.2
+[10:48:35] Local version 4.0.0-alpha.2
+Подробная информация находится на этой странице блога: https://demisx.github.io/gulp4/2015/01/15/install-gulp4.html
+
+для установки версии gulp -4, CLI должна быть 1.2.2, которая будет поддерживать gulp 4.0
+
+установить gulp -cli 1.2.2 запустите sudo npm install gulp-cli@1.2.2 -g
+
+и установить gulp 4.0 запустите npm install 'gulpjs/gulp.git#4.0' --save-dev
+
+когда вы запустите команду gulp -v
+
+вы должны получить
+
+[11:38:36] Версия CLI 1.2.2
+
+[11:38:36] Локальная версия 4.0.0-alpha.2
+
+похожая проблема на GitHub
+
+1 
+ответ дан Rajath M S 15 дек. '16 в 15:28 источникподелиться
+Моя установка немного отличалась.
+
+Выполнение
+
+npm install 'gulpjs/gulp.git#4.0' --save-dev
+или
+
+npm install 'gulpjs/gulp#4.0' --save-dev
+Сделал мне ошибку:
+
+npm ERR! код EINVALIDTAGNAME npm ERR! Недопустимое имя тега gulp # 4.0 ": Теги может не иметь никаких символов, кодирующих encodingURIComponent.
+
+NB У меня возникли проблемы с установкой локального gulp -4, поэтому я взглянул на мою последнюю установку package.json и увидел это:
+
+"gulp": "github:gulpjs/gulp#4.0",
+Итак, я решил установить локальный gulp с
+
+npm install "github:gulpjs/gulp#4.0" --save-dev
+и это сработало, успешно установив локальный gulp 4.
+
+[15:45:55] CLI version 1.4.0
+[15:45:55] Local version 4.0.0-alpha.2
