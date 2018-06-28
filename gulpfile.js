@@ -49,11 +49,15 @@ gulp.task('sprite', function (cb) {
     cssName: 'sprite.scss'
   }));
  // return
-  spriteData.pipe(gulp.dest('build/images/'));
+  spriteData.img.pipe(gulp.dest('build/images/'));
  // return 
-  spriteData.pipe(gulp.dest('src/styles/global/'));
+  spriteData.css.pipe(gulp.dest('src/styles/global/'));
   cb();
 });
+
+
+
+
 
 /* ------------ Delete ------------- */
 gulp.task('clean', function del(cb){
