@@ -1,4 +1,4 @@
-.idea
+﻿.idea
  
 # игнорировать все файлы в каталоге build/
 /build/
@@ -44,6 +44,7 @@ recycle.bin/
 Глобальные плагины.txt
 mac adres.txt
 gitignore
+package-lock.json
 
 
  
